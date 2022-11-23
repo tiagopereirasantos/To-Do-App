@@ -25,7 +25,12 @@ public class Task {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
-
+    
+    public Task(){
+        this.createdAt = new Date();
+        // essa classe construtora serve para setar a data exata quando a tarefa for criada.
+    }
+    
     public int getId() {
         return id;
     }
