@@ -66,6 +66,10 @@ public class TaskController  {
             throw new SQLException("Erro ao deletar a tarefa");
         } finally{
             ConnectionFactory.closeConnection(conn);
+            
+            if (statement != null){
+                statement.close();
+            }
         }
         
     }
