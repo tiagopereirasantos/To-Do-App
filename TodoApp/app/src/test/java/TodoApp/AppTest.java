@@ -6,7 +6,7 @@ package TodoApp;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-class MainTest {
+class AppTest {
     @Test void appHasAGreeting() {
         Main classUnderTest = new Main();
         assertNotNull(classUnderTest.getGreeting(), "app should have a greeting");

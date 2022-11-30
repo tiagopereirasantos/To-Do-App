@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.Project;
@@ -34,7 +35,7 @@ public class ProjectController {
             
             statement.execute();
                         
-        }catch (Exception ex){
+        }catch (SQLException ex){
             throw new RuntimeException("Erro ao salvar projeto"+ ex.getMessage(), ex);
             
         }finally{
