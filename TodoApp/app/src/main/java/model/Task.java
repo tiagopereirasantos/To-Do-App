@@ -28,6 +28,8 @@ public class Task {
     
     public Task(){
         this.createdAt = new Date();
+        this.updatedAt = new Date();
+
         // essa classe construtora serve para setar a data exata quando a tarefa for criada.
     }
     

@@ -30,13 +30,13 @@ public class ProjectController {
             
             statement.setString(1, project.getName());
             statement.setString(2, project.getDescription());
-            statement.setDate(3, new Date(project.getCreatedAt().getTime()));
-            statement.setDate(4, new Date(project.getUpdatedAt().getTime()));
+            statement.setDate(3, new java.sql.Date(project.getCreatedAt().getTime()));
+            statement.setDate(4, new java.sql.Date(project.getUpdatedAt().getTime()));
             
             statement.execute();
                         
         }catch (SQLException ex){
-            throw new RuntimeException("Erro ao salvar projeto"+ ex.getMessage(), ex);
+            throw new RuntimeException("Erro ao salvar projeto", ex);
             
         }finally{
             ConnectionFactory.closeConnection(connection, statement);
@@ -54,19 +54,18 @@ public class ProjectController {
             statement = connection.prepareStatement(sql);
             statement.setInt(1, id);
             statement.execute();            
-        }catch (Exception ex){
-            throw new RuntimeException("Erro ao deletar tarefa!"+ ex.getMessage(), ex);
+        }catch (SQLException ex){
+            throw new RuntimeException("Erro ao deletar tarefa!", ex);
         }finally{
             ConnectionFactory.closeConnection(connection, statement);
         }
     }
     
     public void update (Project project)    {
-        String sql = "UPDATE projects SET"
-                + "name = ?,"
-                + "description = ?,"
-                + "createdAt = ?,"
-                + "updatedAt = ?"
+        String sql = "UPDATE projects SET name = ?, "
+                + "description = ?, "
+                + "createdAt = ?, "
+                + "updatedAt = ? "
                 + "WHERE id = ?";
         
         Connection connection = null;
@@ -78,14 +77,14 @@ public class ProjectController {
             
             statement.setString(1 , project.getName());
             statement.setString(2, project.getDescription());
-            statement.setDate(3, new Date(project.getCreatedAt().getTime()));
-            statement.setDate(4, new Date(project.getUpdatedAt().getTime()));
+            statement.setDate(3, new java.sql.Date(project.getCreatedAt().getTime()));
+            statement.setDate(4, new java.sql.Date(project.getUpdatedAt().getTime()));
             statement.setInt(5, project.getId());
             
             statement.execute();
             
-        } catch(Exception ex){
-            throw new RuntimeException("Erro ao atualizar o projeto"+ex.getMessage(), ex);
+        } catch(SQLException ex){
+            throw new RuntimeException("Erro ao atualizar o projeto", ex);
         
         }finally{
          ConnectionFactory.closeConnection(connection, statement);   
@@ -121,8 +120,8 @@ public class ProjectController {
                 
                 projects.add(project);
             }
-        }catch (Exception ex){
-            throw new RuntimeException("Erro ao selecionar ");
+        }catch (SQLException ex){
+            throw new RuntimeException("Erro ao selecionar", ex);
         }finally{
             ConnectionFactory.closeConnection(connection, statement, resultSet);
         }
