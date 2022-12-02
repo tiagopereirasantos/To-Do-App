@@ -1,6 +1,7 @@
 package TodoApp;
 
 import controller.ProjectController;
+import java.util.List;
 import model.Project;
 
     public class App{
@@ -21,9 +22,12 @@ import model.Project;
                 project.setName("Novo nome do projeto");
                 projectController.update(project);
 
-//                List<Project> projects = projectController.getAll();
-//                System.out.println("Total de projetos = " + projects.size());
+                // Cria uma list de projetos e atribui todos projetos que estava no banco de dados
+                List<Project> projects = projectController.getAll();
+                System.out.println("Total de projetos = " + projects.size());
        
-        
+                projectController.removeById(1);
+                
+                // TESTAR TASKCOTNTROLLER
         }
     }
