@@ -15,14 +15,17 @@ public class TaskController  {
     
     public void save(Task task){
         
-        String sql = "INSERT INTO tasks (idProject,"
-                + "name,"
-                + "description,"
-                + "completed,"
-                + "notes,"
-                + "deadline,"
-                + "createdAt,"
-                + "updatedAt) VALUES (?, ?, ?, ?, ?, ?, ?, ?) ";
+        String sql = "INSERT INTO tasks "
+                + "(idProject, "
+                + "name, "
+                + "description, "
+                + "completed, "
+                + "notes, "
+                + "deadline, "
+                + "createdAt, "
+                + "updatedAt) "
+                + "VALUES (?,?,?,?,?,?,?,?)";
+               
         
         Connection connection = null;
         PreparedStatement statement = null;
@@ -43,8 +46,7 @@ public class TaskController  {
             statement.execute();
             
         } catch (Exception ex){
-            throw new RuntimeException("Erro ao salvar tarefa"
-                    + ex.getMessage(), ex);
+            throw new RuntimeException("Erro ao salvar tarefa",ex);
         } finally{
             ConnectionFactory.closeConnection(connection, statement);
         }
