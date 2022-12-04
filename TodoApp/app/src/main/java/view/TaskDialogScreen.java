@@ -47,25 +47,34 @@ public class TaskDialogScreen extends javax.swing.JDialog {
 
         jPanel2.setBackground(java.awt.Color.white);
 
+        jLabel3.setFont(new java.awt.Font("Manjari", 0, 14)); // NOI18N
         jLabel3.setText("Nome");
 
+        jTextField1.setFont(new java.awt.Font("Manjari", 0, 14)); // NOI18N
+
+        jLabel4.setFont(new java.awt.Font("Manjari", 0, 14)); // NOI18N
         jLabel4.setText("Descrição");
 
         jTextArea1.setColumns(20);
+        jTextArea1.setFont(new java.awt.Font("Manjari", 0, 14)); // NOI18N
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        jLabel5.setFont(new java.awt.Font("Manjari", 0, 14)); // NOI18N
         jLabel5.setText("Prazo");
 
+        jTextField2.setFont(new java.awt.Font("Manjari", 0, 14)); // NOI18N
         jTextField2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField2ActionPerformed(evt);
             }
         });
 
+        jLabel6.setFont(new java.awt.Font("Manjari", 0, 14)); // NOI18N
         jLabel6.setText("Notas");
 
         jTextArea2.setColumns(20);
+        jTextArea2.setFont(new java.awt.Font("Manjari", 0, 14)); // NOI18N
         jTextArea2.setRows(5);
         jScrollPane2.setViewportView(jTextArea2);
 
@@ -104,7 +113,7 @@ public class TaskDialogScreen extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 89, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
