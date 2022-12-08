@@ -50,6 +50,7 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
 
         jLabelToolbarSave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelToolbarSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/check.png"))); // NOI18N
+        jLabelToolbarSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelToolbarSave.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelToolbarSaveMouseClicked(evt);
@@ -87,6 +88,7 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
         jLabelName.setText("Nome");
 
         jTextFieldName.setFont(new java.awt.Font("Manjari", 0, 14)); // NOI18N
+        jTextFieldName.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jTextFieldName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextFieldNameActionPerformed(evt);
@@ -99,6 +101,7 @@ public class ProjectDialogScreen extends javax.swing.JDialog {
         jTextAreaDescription.setColumns(20);
         jTextAreaDescription.setFont(new java.awt.Font("Manjari", 0, 14)); // NOI18N
         jTextAreaDescription.setRows(5);
+        jTextAreaDescription.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jScrollPane1.setViewportView(jTextAreaDescription);
 
         javax.swing.GroupLayout jPanelProjectLayout = new javax.swing.GroupLayout(jPanelProject);

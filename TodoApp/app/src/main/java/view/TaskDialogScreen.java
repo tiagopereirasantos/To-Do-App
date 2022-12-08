@@ -5,6 +5,10 @@
 package view;
 
 import controller.TaskController;
+import java.util.Date;
+import java.text.SimpleDateFormat;  
+import javax.swing.JOptionPane;
+import model.Project;
 import model.Task;
 
 /**
@@ -14,6 +18,7 @@ import model.Task;
 public class TaskDialogScreen extends javax.swing.JDialog {
 
     TaskController controller;
+    Project project;
     
     public TaskDialogScreen(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -177,12 +182,25 @@ public class TaskDialogScreen extends javax.swing.JDialog {
         
         try{
             Task task = new Task();
+            
+            task.setIdProject(7);
             task.setName(jTextFieldName.getText());
             task.setDescription(jTextAreaDescription.getText());
-            task.setDeadline(jFormattedTextFieldDeadline.getDate());
             task.setNotes(jTextAreaNotes.getText());
+            task.setIsCompleted(false);
+            
+            SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+            Date deadline = null;
+            
+            deadline = dateFormat.parse(jFormattedTextFieldDeadline.getText());
+            task.setDeadline(deadline);
+            
             controller.save(task);
+            
+            JOptionPane.showMessageDialog(rootPane, "Tarefa salva com sucesso");
+
         } catch (Exception e){
+            JOptionPane.showMessageDialog(rootPane, e.getMessage());
             
         }
         this.dispose();
@@ -246,4 +264,10 @@ public class TaskDialogScreen extends javax.swing.JDialog {
     private javax.swing.JTextArea jTextAreaNotes;
     private javax.swing.JTextField jTextFieldName;
     // End of variables declaration//GEN-END:variables
+
+    public void setProject(Project project) {
+        this.project = project;
+    }
+
+    
 }
