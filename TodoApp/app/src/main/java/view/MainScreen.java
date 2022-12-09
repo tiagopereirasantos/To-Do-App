@@ -411,8 +411,7 @@ public class MainScreen extends javax.swing.JFrame {
         
         projectController = new ProjectController();
         taskController = new TaskController();
-        
-        
+               
     }
     
     public void initComponentsModel(){
