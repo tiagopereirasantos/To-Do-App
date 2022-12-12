@@ -27,6 +27,7 @@ public class Task {
     }
     
     public Task(){
+        this.isCompleted = false;
         this.createdAt = new Date();
         this.updatedAt = new Date();
         this.deadline = new Date();
@@ -86,6 +87,9 @@ public class Task {
     public Date getDeadline() {
         return deadline;
     }
+ public void isIsCompleted(boolean b) {
+        this.isCompleted = isCompleted;
+    }
 
     public void setDeadline(Date deadline) {
         this.deadline = deadline;
@@ -110,11 +114,5 @@ public class Task {
     @Override
     public String toString() {
         return "Task{" + "id=" + id + ", idProject=" + idProject + ", name=" + name + ", description=" + description + ", notes=" + notes + ", isCompleted=" + isCompleted + ", deadline=" + deadline + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + '}';
-    }
-
-    public void isIsCompleted(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    
+    }    
 }

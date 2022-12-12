@@ -88,7 +88,7 @@ public class TaskController  {
             
             //executando a query
             statement.execute();
-        } catch (Exception ex){
+        } catch (SQLException ex){
             throw new RuntimeException("Erro ao atualizar tarefa" + ex.getMessage(), ex);
         } finally{
             ConnectionFactory.closeConnection(connection, statement);
