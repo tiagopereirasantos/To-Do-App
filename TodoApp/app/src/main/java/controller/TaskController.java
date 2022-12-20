@@ -62,7 +62,7 @@ public class TaskController  {
                 + "completed = ?,"
                 + "deadline = ?,"
                 + "createdAt = ?,"
-                + "updatedAt = ?) "
+                + "updatedAt = ? "
                 + "WHERE id = ?";
         
         Connection connection = null;
