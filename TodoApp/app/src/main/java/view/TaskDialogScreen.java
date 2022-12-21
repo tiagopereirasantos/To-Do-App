@@ -62,6 +62,7 @@ public class TaskDialogScreen extends javax.swing.JDialog {
 
         jLabelToolBarSave.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelToolBarSave.setIcon(new javax.swing.ImageIcon(getClass().getResource("/check.png"))); // NOI18N
+        jLabelToolBarSave.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jLabelToolBarSave.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabelToolBarSaveMouseClicked(evt);
@@ -107,7 +108,7 @@ public class TaskDialogScreen extends javax.swing.JDialog {
         jLabelDeadline.setFont(new java.awt.Font("Manjari", 0, 14)); // NOI18N
         jLabelDeadline.setText("Prazo");
 
-        jFormattedTextFieldDeadline.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(java.text.DateFormat.getDateInstance(java.text.DateFormat.SHORT))));
+        jFormattedTextFieldDeadline.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/MM/yyyy"))));
 
         jLabelNotes.setFont(new java.awt.Font("Manjari", 0, 14)); // NOI18N
         jLabelNotes.setText("Notas");
