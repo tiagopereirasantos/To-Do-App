@@ -14,6 +14,7 @@ import java.util.List;
 import javax.swing.DefaultListModel;
 import model.Project;
 import model.Task;
+import util.ButtonColumnCellRenderer;
 import util.DeadlineColumnCellRenderer;
 import util.TaskTableModel;
 
@@ -367,6 +368,9 @@ public class MainScreen extends javax.swing.JFrame {
             // TODO add your handling code here:
             int rowIndex = jTableTasks.rowAtPoint(evt.getPoint());
             int columnIndex = jTableTasks.columnAtPoint(evt.getPoint());
+            int projectIndex = jListProjects.getSelectedIndex();
+
+
             Task task = taskModel.getTasks().get(rowIndex);
 
             switch (columnIndex){
@@ -374,12 +378,18 @@ public class MainScreen extends javax.swing.JFrame {
                     taskController.update(task);
                 break;
                 
+                case 4:
+                  
+                break;
+        
                 case 5:
                     taskController.removeById(task.getId());
                     taskModel.getTasks().remove(task);
                     
-                    int projectIndex = jListProjects.getSelectedIndex();
+                    
+                    projectIndex = jListProjects.getSelectedIndex();
                     Project project = (Project) projectsModel.get(projectIndex);
+                    project = (Project) projectsModel.get(projectIndex);
                     loadTasks(project.getId());
                 break;
                 
@@ -462,6 +472,9 @@ public class MainScreen extends javax.swing.JFrame {
         
         jTableTasks.getColumnModel().getColumn(2)
                 .setCellRenderer(new DeadlineColumnCellRenderer());
+        
+        jTableTasks.getColumnModel().getColumn(4).setCellRenderer(new ButtonColumnCellRenderer("edit"));
+        jTableTasks.getColumnModel().getColumn(5).setCellRenderer(new ButtonColumnCellRenderer("delete"));
         
     }
 
