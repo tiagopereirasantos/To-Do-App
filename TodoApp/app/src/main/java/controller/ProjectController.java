@@ -27,7 +27,7 @@ public class ProjectController {
         try{
             connection = ConnectionFactory.getConnection();
             statement = connection.prepareStatement(sql);
-            
+     
             statement.setString(1, project.getName());
             statement.setString(2, project.getDescription());
             statement.setDate(3, new java.sql.Date(project.getCreatedAt().getTime()));
