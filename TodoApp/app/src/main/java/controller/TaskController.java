@@ -130,7 +130,7 @@ public class TaskController  {
         ResultSet resultSet = null;
         
         //Lista de tarefas que será devolvida quando a hamada do método acontecer   
-        List<Task> tasks = new ArrayList<Task>();
+        List<Task> tasks = new ArrayList<>();
         
         try{
             // Criação da conexão

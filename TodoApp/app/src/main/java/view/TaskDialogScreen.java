@@ -193,7 +193,7 @@ public class TaskDialogScreen extends javax.swing.JDialog {
 
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
 
-                Date deadline = dateFormat.parse(jFormattedTextFieldDeadline.getText());
+                Date deadline = dateFormat.parse(jFormattedTextFieldDeadline.getText());               
                 task.setDeadline(deadline);
 
                 controller.save(task);
@@ -253,6 +253,10 @@ public class TaskDialogScreen extends javax.swing.JDialog {
             }
         });
     }
+    
+    public void setProject(Project project) {
+        this.project = project;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JFormattedTextField jFormattedTextFieldDeadline;
@@ -271,9 +275,6 @@ public class TaskDialogScreen extends javax.swing.JDialog {
     private javax.swing.JTextField jTextFieldName;
     // End of variables declaration//GEN-END:variables
 
-    public void setProject(Project project) {
-        this.project = project;
-    }
-
+    
     
 }
